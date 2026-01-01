@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "source",
+    "user_id",
+    "record_count",
+    "records",
+    "last_snapshot_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "source": {
+      "const": "douban"
+    },
+    "user_id": {
+      "type": "string"
+    },
+    "record_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "last_snapshot_at": {
+      "type": "string"
+    },
+    "records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "record_id",
+          "category",
+          "title",
+          "status",
+          "status_label",
+          "marked_at",
+          "douban_id",
+          "douban_url",
+          "source_user",
+          "source_mode",
+          "source_snapshot",
+          "first_seen_at",
+          "last_seen_at",
+          "rating",
+          "tags",
+          "comment"
+        ],
+        "properties": {
+          "record_id": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "status_label": {
+            "type": "string"
+          },
+          "marked_at": {
+            "type": "string"
+          },
+          "douban_id": {
+            "type": "string"
+          },
+          "douban_url": {
+            "type": "string"
+          },
+          "source_user": {
+            "type": "string"
+          },
+          "source_mode": {
+            "type": "string"
+          },
+          "source_snapshot": {
+            "type": "string"
+          },
+          "first_seen_at": {
+            "type": "string"
+          },
+          "last_seen_at": {
+            "type": "string"
+          },
+          "rating": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 1,
+            "maximum": 5
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "comment": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

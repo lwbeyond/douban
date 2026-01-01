@@ -1,0 +1,129 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "run_id",
+    "collector_version",
+    "source_user",
+    "source_mode",
+    "source_snapshot",
+    "category",
+    "status",
+    "contract",
+    "source_snapshot_sha256",
+    "items_sha256",
+    "scope_status",
+    "run_started_at",
+    "run_finished_at",
+    "list_started_at",
+    "list_finished_at",
+    "expected_count",
+    "observed_count",
+    "pagination_complete",
+    "can_update_rows",
+    "absence_means_deleted",
+    "coverage"
+  ],
+  "properties": {
+    "run_id": {
+      "type": "string"
+    },
+    "collector_version": {
+      "type": "string"
+    },
+    "source_user": {
+      "type": "string"
+    },
+    "source_mode": {
+      "type": "string"
+    },
+    "source_snapshot": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "contract": {
+      "const": "douban-list-receipt/1"
+    },
+    "source_snapshot_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "items_sha256": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "scope_status": {
+      "enum": [
+        "complete",
+        "complete_empty",
+        "complete_with_gap",
+        "partial",
+        "failed",
+        "unseen"
+      ]
+    },
+    "run_started_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "run_finished_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "list_started_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "list_finished_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "expected_count": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "observed_count": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "pagination_complete": {
+      "type": "boolean"
+    },
+    "can_update_rows": {
+      "type": "boolean"
+    },
+    "absence_means_deleted": {
+      "const": false
+    },
+    "coverage": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": false
+}
